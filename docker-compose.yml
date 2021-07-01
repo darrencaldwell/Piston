@@ -10,9 +10,9 @@ services:
     restart: unless-stopped
   
   cards:
-    build: ./Cards/
+    build: ./cards/
     volumes:
-      - ./Cards:/app
+      - ./cards:/app
     ports:
       - 21450:21450
     command: nodemon index.js
