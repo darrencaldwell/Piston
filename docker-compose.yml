@@ -4,7 +4,7 @@ services:
     image : mongo
     container_name: mongodb
     volumes:
-      - /home/dc228/Unity/Piston/mongodb_data/:/data/db
+      - ./mongodb_data/:/data/db
     ports:
       - 27017:27017
     restart: unless-stopped
