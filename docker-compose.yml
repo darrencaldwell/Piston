@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  mongodb:
+    image : mongo
+    container_name: mongodb
+    volumes:
+      - /home/dc228/Unity/Piston/mongodb_data/:/data/db
+    ports:
+      - 27017:27017
+    restart: unless-stopped
+  
+  cards:
+    build: ./Cards/
+    volumes:
+      - ./Cards:/app
+    ports:
+      - 21450:21450
+    command: nodemon index.js
