@@ -7,6 +7,7 @@ const url = "mongodb://mongodb:27017/piston_cards";
 const port = 21450
 const Schema = mongoose.Schema;
 
+
 const cardSchema = new mongoose.Schema({
   card: [{
     version: String,
@@ -17,7 +18,8 @@ const cardSchema = new mongoose.Schema({
 const Card = mongoose.model('Card', cardSchema);
 
 const testCard = new Card({
-  card: [{
+  card: [
+    {
     version: "1.0",
     data: {
       name: "test",
@@ -29,11 +31,25 @@ const testCard = new Card({
       lastEditor: "darren",
       dateModified: new Date()
     }
-  }]
+  },
+  {
+    version: "1.1",
+    data: {
+      name: "test",
+      description: "card thats really good",
+      repairCost: "a lot",
+      scrapValue: "not a lot",
+      credit_value: 666,
+      type: "Mechanism",
+      lastEditor: "darren",
+      dateModified: new Date()
+    }
+  }
+  ]
 })
 
 app.get("/", function (req, res) {
-  date = new Date();
+  const date: Date = new Date();
   res.send(`ping pong the date is ${date}`)
 })
 
@@ -54,6 +70,7 @@ app.get("/card", (req, res) => {
     else res.send(cards)
   })
 })
+
 
 mongoose.connect(url, {useUnifiedTopology: true})
 const db = mongoose.connection;

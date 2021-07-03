@@ -3,6 +3,7 @@ FROM node
 WORKDIR /app
 
 RUN npm install -g nodemon
+RUN npm install -g ts-node-dev
 
 COPY package*.json ./
 

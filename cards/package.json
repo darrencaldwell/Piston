@@ -4,6 +4,7 @@
   "description": "cards service for piston",
   "main": "server.js",
   "scripts": {
+    "start": "ts-node-dev server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -11,6 +12,11 @@
   "dependencies": {
     "express": "^4.17.1",
     "mongodb": "^3.6.9",
+    "mongoose": "^5.13.1",
     "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.3.5"
   }
 }

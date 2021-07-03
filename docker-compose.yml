@@ -1,10 +1,14 @@
 version: "3.8"
+networks:
+  default:
+    external: true
+    name: localdev
 services:
   mongodb:
     image : mongo
     container_name: mongodb
-    volumes:
-      - ./mongodb_data/:/data/db
+      #    volumes:
+      #      - ./mongodb_data/:/data/db
     ports:
       - 27017:27017
     restart: unless-stopped
@@ -15,4 +19,4 @@ services:
       - ./cards:/app
     ports:
       - 21450:21450
-    command: nodemon index.js
+    command: npm start
