@@ -1,6 +1,12 @@
 # Piston
 WIP Digital version of a Card based game developed by Brendan Head, Oscar Katz, Sam Evans and Darren Caldwell
 
+## Frameworks
+Typescript : For interaction between the MongoDB database and in future the game itself.
+MongoDB    : NoSQL db for flexible card storage
+Docker     : For easy and replicable setup and running
+Unity      : Game Engine
+
 ## Services Checklist
 
 - [ ] Cards - In progress
